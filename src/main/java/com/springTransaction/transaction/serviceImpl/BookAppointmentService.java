@@ -34,6 +34,7 @@ public class BookAppointmentService {
 		System.out.println("patient save succesfully");
 		Integer patientNo =patient.save(p).getPatientNo();
 		
+		//Any exception after saving the patient it will rollback the whole transaction even the patient data also
 		Appointment a=new Appointment();
 	    a.setAppointmenDate(LocalDate.now());
 	    a.setPatientNo(p.getPatientNo());
